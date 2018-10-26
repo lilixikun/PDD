@@ -1,16 +1,18 @@
 import Vue from "vue";
 import router from "./router";
-import store from "./store";
-import MintUI from 'mint-ui';
-import LyTab from 'ly-tab';
-import 'mint-ui/lib/style.css';
+import store from "./store/store";
+import MintUI from "mint-ui";
+import LyTab from "ly-tab";
+import "mint-ui/lib/style.css";
 import App from "./App.vue";
 import {
-  Tabbar,
-  TabItem
+  Swipe,
+  SwipeItem
 } from 'mint-ui';
 Vue.use(MintUI);
 Vue.use(LyTab);
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 Vue.config.productionTip = false;
 
 new Vue({

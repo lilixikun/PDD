@@ -39,9 +39,6 @@ export default {
     change(item, index) {
       this.$router.replace(item.path);
     }
-  },
-  mounted: function() {
-    console.log(this.$route);
   }
 };
 </script>
