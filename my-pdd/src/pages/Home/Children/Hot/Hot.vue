@@ -47,9 +47,6 @@ export default {
 };
 </script>
 <style lang="stylus" scoped>
-// .mint-swipe {
-// height: 140px;
-// }
 .hot {
   width: 100%;
   height: 100%;

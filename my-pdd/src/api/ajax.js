@@ -2,7 +2,7 @@
 
 import axios from 'axios'
 import qs from 'qs'
-
+axios.defaults.withCredentials = true;
 axios.interceptors.request.use(config => {
     // loading
     return config

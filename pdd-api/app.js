@@ -3,11 +3,29 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const session = require('express-session');
+var RedisStrore = require('connect-redis')(session);
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+//使用session中间件
+app.use(session({
+  secret: 'xikun', //值可以随便取
+  resave: false,
+  saveUninitialized: true, //是否保存未初始化的会话
+  cookie: {
+    maxAge: 1000 * 60 * 30
+  },
+  store: new RedisStrore({
+    db: 1,
+    host: "47.98.161.153",
+    port: 6379,
+    logErrors: true,
+    pass: "admincrz"
+  })
+}));
 
 app.all('*', function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

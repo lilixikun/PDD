@@ -11,7 +11,8 @@ export default new Router({
       component: () => import("./pages/Home/Home.vue"),
       children: [{
           path: "hot",
-          component: () => import("./pages/Home/Children/Hot/Hot.vue")
+          component: () => import("./pages/Home/Children/Hot/Hot.vue"),
+          meta: {showBottomTabBar: true}
         },
         {
           path: '/home',
@@ -47,5 +48,13 @@ export default new Router({
         showBottomTabBar: true
       }
     },
+    {
+      path: '/login',
+      component: () => import('./pages/Login/Login.vue')
+    },
+    {
+      path: '/',
+      redirect: '/login'
+    }
   ]
 });

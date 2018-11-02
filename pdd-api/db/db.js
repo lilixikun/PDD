@@ -21,7 +21,6 @@ connect.connect(err => {
     //创建轮播图
     let sqlCasual = "CREATE TABLE IF NOT EXISTS pdd_hot_casual(id INT(11) NOT NULL AUTO_INCREMENT ,detail VARCHAR(200) DEFAULT NULL ,imgurl VARCHAR(200) DEFAULT NULL , PRIMARY KEY(id))";
     connect.query(sqlCasual, (err, result) => {
-        console.log(result);
         if (err) {
             console.log(err);
         }

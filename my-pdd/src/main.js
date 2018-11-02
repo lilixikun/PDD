@@ -7,12 +7,14 @@ import "mint-ui/lib/style.css";
 import App from "./App.vue";
 import {
   Swipe,
-  SwipeItem
+  SwipeItem,
+  Toast
 } from 'mint-ui';
 Vue.use(MintUI);
 Vue.use(LyTab);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Toast);
 Vue.config.productionTip = false;
 
 new Vue({

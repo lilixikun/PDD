@@ -4,8 +4,12 @@
          <img :src="item.hd_thumb_url" />
          <div class="shop-item-right">
             <div>{{item.goods_name}}</div>
+            <div style="flex:1;webkit-flex:1"></div>
             <div class="shop-item-bottom">
               <span style="fontSize:12px;color:#666"><span class="item-price">￥{{item.normal_price / 100}}</span>{{item.sales_tip}}</span>
+              <span>
+                  <img v-for="(avatar,index) in item.bubble" :key="index" :src="avatar.avatar"/>
+              </span>
             </div>
          </div>
      </div>
@@ -46,7 +50,6 @@ export default {
 
         .shop-item-right {
             padding: 10px;
-            height: 170px;
             font-size: 14px;
             display: flex;
             flex-direction: column;
@@ -58,15 +61,18 @@ export default {
                 flex-direction: row;
                 justify-content: space-between;
 
-                // position: relative;
-                // left: 0px;
-                // bottom: 0px;
-                // align-items: center;
                 .item-price {
                     font-size: 18px;
                     text-align: center;
                     font-weight: bolder;
                     color: red;
+                }
+
+                img {
+                    width: 30px;
+                    height 30px
+                    padding: 0;
+                    border-radius: 50%;
                 }
             }
         }
